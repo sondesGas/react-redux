@@ -2,6 +2,7 @@ import {
   ADD_TASK,
   DELETE_TASK,
   EDIT_TASK,
+  FILTER_TASKS,
   SET_CURRENT_TASK,
   TOGGLE_COMPLETED_TASK,
 } from "./constants/types";
@@ -30,6 +31,13 @@ export const deleteTask = (payload) => {
 export const setCurrentTask = (payload) => {
   return {
     type: SET_CURRENT_TASK,
+    payload,
+  };
+};
+
+export const filterTasks = (payload) => {
+  return {
+    type: FILTER_TASKS,
     payload,
   };
 };

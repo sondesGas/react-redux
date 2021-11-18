@@ -30,11 +30,7 @@ const EditTask = () => {
       <div className="modal-dialog">
         <div className="modal-content">
           <div className="modal-header">
-            <h5
-              className="modal-title"
-              id="exampleModalLabel"
-              style={{ color: "brown", fontWeight: "bold" }}
-            >
+            <h5 className="modal-title" id="exampleModalLabel">
               Edit Task
             </h5>
           </div>

@@ -2,6 +2,7 @@ import {
   ADD_TASK,
   DELETE_TASK,
   EDIT_TASK,
+  FILTER_TASKS,
   SET_CURRENT_TASK,
   TOGGLE_COMPLETED_TASK,
 } from "../actions/constants/types";
@@ -40,6 +41,17 @@ const taskReducer = (state = initialState, action) => {
       return {
         ...state,
         current: action.payload,
+      };
+
+    case FILTER_TASKS:
+      return {
+        ...state,
+        filteredTodos:
+          action.payload === "completed"
+            ? state.todos.filter((todo) => todo.isDone)
+            : action.payload === "uncompleted"
+            ? state.todos.filter((todo) => !todo.isDone)
+            : state.todos,
       };
 
     case TOGGLE_COMPLETED_TASK:
